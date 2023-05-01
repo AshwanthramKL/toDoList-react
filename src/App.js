@@ -10,12 +10,17 @@ function App() {
   };
 
   const addTask = () => {
-    setToDoList([...toDoList, newTask]); // Using spread operator
+    const task = {
+      id: toDoList.length === 0 ? 1 : toDoList[toDoList.length - 1].id + 1,
+      taskName: newTask,
+    };
+    setToDoList([...toDoList, task]); // Using spread operator
   };
 
-  const deleteTask = (taskName) => {
-    setToDoList(toDoList.filter((task) => task !== taskName));
+  const deleteTask = (id) => {
+    setToDoList(toDoList.filter((task) => task.id !== id));
   };
+
   return (
     <div className="App">
       <div className="addTask">
@@ -25,10 +30,10 @@ function App() {
       <div className="list">
         {toDoList.map((task) => {
           return (
-            <div>
-              <h1>{task}</h1>
+            <div className="task">
+              <h1>{task.taskName}</h1>
               <br></br>
-              <button onClick={() => deleteTask(task)}>X</button>
+              <button onClick={() => deleteTask(task.id)}>X</button>
             </div>
           );
         })}
