@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-
+import { Task } from "./Task.js";
 function App() {
   const [toDoList, setToDoList] = useState([]);
   const [newTask, setNewTask] = useState("");
@@ -13,6 +13,7 @@ function App() {
     const task = {
       id: toDoList.length === 0 ? 1 : toDoList[toDoList.length - 1].id + 1,
       taskName: newTask,
+      completed: false,
     };
     setToDoList([...toDoList, task]); // Using spread operator
   };
@@ -21,6 +22,16 @@ function App() {
     setToDoList(toDoList.filter((task) => task.id !== id));
   };
 
+  const completeTask = (id) => {
+    setToDoList(
+      toDoList.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed: true };
+        }
+        return task;
+      })
+    );
+  };
   return (
     <div className="App">
       <div className="addTask">
@@ -30,11 +41,13 @@ function App() {
       <div className="list">
         {toDoList.map((task) => {
           return (
-            <div className="task">
-              <h1>{task.taskName}</h1>
-              <br></br>
-              <button onClick={() => deleteTask(task.id)}>X</button>
-            </div>
+            <Task
+              taskName={task.taskName}
+              id={task.id}
+              completed={task.completed}
+              deleteTask={deleteTask}
+              completeTask={completeTask}
+            />
           );
         })}
       </div>
