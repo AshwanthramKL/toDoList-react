@@ -13,6 +13,9 @@ function App() {
     setToDoList([...toDoList, newTask]); // Using spread operator
   };
 
+  const deleteTask = (taskName) => {
+    setToDoList(toDoList.filter((task) => task !== taskName));
+  };
   return (
     <div className="App">
       <div className="addTask">
@@ -21,7 +24,13 @@ function App() {
       </div>
       <div className="list">
         {toDoList.map((task) => {
-          return <h1>{task}</h1>;
+          return (
+            <div>
+              <h1>{task}</h1>
+              <br></br>
+              <button onClick={() => deleteTask(task)}>X</button>
+            </div>
+          );
         })}
       </div>
     </div>
