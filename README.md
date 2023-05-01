@@ -19,15 +19,18 @@ This project is a part of PedroTech's ReactJs Course
 
 ### The Objective
 
-To learn and Strengthen the concepts of States, components, etc... in React
+To learn and Strengthen the concepts of States and components in React.
 
 ### Screenshot
 
-![Website screenshot](./images/website_screenshot.jpg)
+![Website screenshot](./public/website_preview.png)  
+
+![Website screenshot 2](./public/website_preview2.png)
+
 
 ### Links
 
-- Solution URL: [Solution URL](https://github.com/AshwanthramKL/Huddle-landing-page)
+- Solution URL: [Solution URL](https://github.com/AshwanthramKL/toDoList-react)
 - Live Site URL: [Landing Page](https://ashwanthramkl.github.io/Huddle-landing-page/)
 
 ## My process
@@ -39,7 +42,7 @@ To learn and Strengthen the concepts of States, components, etc... in React
 
 ### What I learned
 
-This project helped me recap over some concepts of CSS such as
+This project helped me strenghten my understanding some concepts such as
 
 - States
 - Components
@@ -49,6 +52,7 @@ This project helped me recap over some concepts of CSS such as
 ### Useful resources
 
 - [React docs](https://react.dev/)
+- [PedroTech's React Playlist](https://youtube.com/playlist?list=PLpPqplz6dKxW5ZfERUPoYTtNUNvrEebAR)
 
 ## Author
 
